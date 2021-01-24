@@ -1,0 +1,15 @@
+<table class="table table-hover" style="width: 40em;">
+    <caption class="text-center">Exchange Rates</caption>
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Country Code</th>
+            <th scope="col" class="text-center">Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of rates | keyvalue">
+            <td class="text-center">{{item.key}}</td>
+            <td class="text-center">{{item.value}}</td>
+        </tr>
+    </tbody>
+</table> 

@@ -1,0 +1,27 @@
+<div>
+  <div class="p-2">
+    <div>Source Currency</div>
+    <div>
+      <input #currency1Amount type="text" placeholder="Amount" name="currency1Amount" ngModel>
+      <select class="m-1" id="selectedSource">
+        <option *ngFor="let countryCode of countryCodes" [value]="countryCode">
+          {{countryCode}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="p-2">
+    <div>Target Currency</div>
+    <div>
+      <input #currency2Amount type="text" placeholder="Amount" name="currency2Amount" ngModel>
+      <select class="m-1" id="selectedTarget">
+        <option *ngFor="let countryCode of countryCodes" [value]="countryCode">
+          {{countryCode}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="p-3">
+    <button type="button" mdbBtn color="success" mdbWavesEffect>Convert</button>
+  </div>
+</div>

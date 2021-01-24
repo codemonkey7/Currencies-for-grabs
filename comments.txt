@@ -2,3 +2,8 @@ Step 2:
 
 The conversion api call is only for paid plans, so still creating the full url as we do not 
 receive an error but just the basic data again. Need another place to clean data to return only needed data.
+
+Step 3:
+
+Historical data is not available, thus not sure what should go in the historic conversion component. It will
+be left empty for now, but will be called from the main component

@@ -18,3 +18,29 @@ Step 2:
 3. Some of the calls can't be made as they are part of the paid plan
 4. After a quick test, the paid plans do not return an error just the basic data again
 5. Decided to future proof the app by creating proper API URL's even though it does not work
+
+Step 3:
+
+1. Create the required components
+2. Historical data is unavailable so I will skip that part for now
+3. Its a simple app so the current exchange and all exchanges can be on the same page
+4. Routing is not required right now, but maybe after charts on step 5
+
+Step 4:
+
+1. Already working on making live updates, as part of the previous steps
+2. Not sure how change detection works in Angular, but I do not think they have hooks like React
+3. In React I would have a simple loading boolean which gets updated after a response is received
+4. This would show a spinner or simpler a "Loading..." text to signal the app is busy
+5. Need to understand HTML/JS bindings in Angular
+
+Step 5:
+
+1. Historical data is not available, but I will add the external library to this app
+2. Visualization would require better UI design and tabbing would be beneficial between components
+3. This step will be used for learning about the external library, and adding comments
+
+Step 6:
+
+1. A simple HTML datepicker can be used here
+2. This all will be added to current exchange component
