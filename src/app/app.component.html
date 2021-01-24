@@ -2,7 +2,10 @@
   <div class="jumbotron">
     <h1 class="text-center">{{title}}</h1>
   </div>
-  <app-current-exchange [countryCodes]="countryCodesList" [exchangedAmount]="exchangedAmount"></app-current-exchange>
+  <!-- Way too many attributes, need to find a better way to share data -->
+  <app-current-exchange [data]="data" (respMsg)="processMsg($event)"></app-current-exchange>
+  <br/><br/>
   <app-all-exchange [rates]="rates"></app-all-exchange>
+  <br/><br/>
   <app-historic-conversion></app-historic-conversion>
 </div>

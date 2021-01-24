@@ -7,3 +7,24 @@ Step 3:
 
 Historical data is not available, thus not sure what should go in the historic conversion component. It will
 be left empty for now, but will be called from the main component
+
+Step 4:
+
+Should I work on finishing the app and make it useable versus getting through most steps, and have the skeleton
+ready for the future functioning application.
+
+
+Overall:
+
+I believe my little knowledge of Angular has made me make bad decision, that I would not allow in my
+everyday code. Learning Angular while I write code in it has been a bit tiresome, and caused constant change
+of strategy which I am not very fond of, and trying to give it the same architecture as React was a mistake
+on my part.
+
+I have planned the following improvements:
+1. Improve data transfer between different components, what I did was horrendous
+2. Improve rate display, nobody wants to see multiple decimal points
+3. Move methods, and place them closest to the components which require them
+4. Do some CSS, if time allows
+5. Add pagination on the rates table, nobody wants to see a big list
+6. Some errors are evident but not very clear, so they were skipped for now

@@ -3,10 +3,16 @@ import { cloneDeep } from 'lodash';
 
 import { CurrencyApiService } from './currency-api.service';
 
+// Not entirely used interface, need to fix
+interface rateData {
+  id: string,
+  exchangeRate: number
+}
+
 interface currencyData {
   base: string,
   date: Date,
-  rates: any
+  rates: rateData[]
 }
 
 @Component({
@@ -19,6 +25,8 @@ export class AppComponent {
   title = 'Currencies for grabs';
 
   data!: currencyData;
+
+  // This is redundant
   rates: any;
   countryCodesList: string[] = [];
 
@@ -39,33 +47,16 @@ export class AppComponent {
     this.currencyApi.initCountryCodes().subscribe(data => {
       if(data){
         this.updateData(data);
-        this.getCountryCodes();
       }
     });
-  }
-  
-  getCountryCodes(){
-
-    // Run after data has been set
-    const codes = Object.keys(this.rates);
-    codes.push('USD');
-    this.countryCodesList = cloneDeep(codes);
-    console.log(this.countryCodesList);
   }
 
   fetchCurrencyData(currency1: string, currency2: string){
     this.currencyApi.lookupExchange(currency1, currency2).subscribe(data => {
       if(data){
         this.updateData(data);
-        this.getExchange(currency2, 1);
       }
     });
-  }
-
-  getExchange(currency2: string, amount: number){
-    var exchangeRate = this.data.rates[currency2];
-    var newAmount = amount*exchangeRate;
-    this.exchangedAmount = cloneDeep(newAmount);
   }
 
   fetchAllRates(currency: string){
@@ -80,9 +71,13 @@ export class AppComponent {
     this.currencyApi.convertAmount(currency1, currency2, amount).subscribe(data => {
       if(data){
         this.updateData(data);
-        this.getExchange(currency2, amount);
       }
     });
+  }
+
+  processMsg(currency : string){
+    console.log(currency);
+    this.fetchAllRates(currency);
   }
 
 }

@@ -1,10 +1,13 @@
 <div>
   <div class="p-2">
+    <input type = "text" placeholder="Filter Currencies" [(ngModel)]="selectedCurrency" (input) = "filterCurrency()">
+    <button type="button" class="m-2" color="success" (click)="clear()">Clear</button>
+    <br/><br/>
     <div>Source Currency</div>
     <div>
-      <input #currency1Amount type="text" placeholder="Amount" name="currency1Amount" ngModel>
-      <select class="m-1" id="selectedSource">
-        <option *ngFor="let countryCode of countryCodes" [value]="countryCode">
+      <input [(ngModel)]="currency1Amount" type="text" placeholder="Amount" name="currency1Amount" (input)="valueChange()">
+      <select class="m-1" [(ngModel)]="selectedSource" (change)="baseChange()">
+        <option *ngFor="let countryCode of filteredResults" [value]="countryCode">
           {{countryCode}}
         </option>
       </select>
@@ -13,15 +16,15 @@
   <div class="p-2">
     <div>Target Currency</div>
     <div>
-      <input #currency2Amount type="text" placeholder="Amount" name="currency2Amount" ngModel>
-      <select class="m-1" id="selectedTarget">
-        <option *ngFor="let countryCode of countryCodes" [value]="countryCode">
+      <input [(ngModel)]="currency2Amount" type="text" placeholder="0" name="currency2Amount" disabled>
+      <select class="m-1" [(ngModel)]="selectedTarget" (change)="valueChange()">
+        <option *ngFor="let countryCode of filteredResults" [value]="countryCode">
           {{countryCode}}
         </option>
       </select>
     </div>
   </div>
-  <div class="p-3">
-    <button type="button" mdbBtn color="success" mdbWavesEffect>Convert</button>
-  </div>
+  <!-- <div class="p-3">
+    <button type="button" color="success" (click)="convert()">Convert</button>
+  </div> -->
 </div>

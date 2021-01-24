@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CurrentExchangeComponent } from './current-exchange/current-exchange.component';
 import { AllExchangeComponent } from './all-exchange/all-exchange.component';
 import { HistoricConversionComponent } from './historic-conversion/historic-conversion.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HistoricConversionComponent } from './historic-conversion/historic-conv
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
