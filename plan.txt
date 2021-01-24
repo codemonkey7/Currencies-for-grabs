@@ -1,0 +1,15 @@
+Step 0:
+
+1. Create a new Repo in github
+2. Save the git URL for use in the next step
+
+Step 1:
+
+1. Install angular using npm
+2. Initialize an angular app
+3. Name it Currencies for Grabs
+4. Initialize git, and set upstream to git URL from previous step
+5. Commit and push
+
+Step 2:
+
