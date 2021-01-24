@@ -13,3 +13,8 @@ Step 1:
 
 Step 2:
 
+1. Create a new service to fetch currency values from api
+2. Create individual fetch methods for the three types of data needed
+3. Some of the calls can't be made as they are part of the paid plan
+4. After a quick test, the paid plans do not return an error just the basic data again
+5. Decided to future proof the app by creating proper API URL's even though it does not work
